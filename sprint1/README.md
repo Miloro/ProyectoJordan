@@ -1,41 +1,41 @@
-puntos que nos comprometimos:
+### puntos que nos comprometimos:
 
-*como usuario vendedor quiero poder dar de alta un modelo de estuche(5)
-criterios de aceptacion:
-* un modelo de estuche tiene marca,color,material,codigo
-* indicar la cantidad de stock (o no) que posee el modelo
+1. como usuario vendedor quiero poder dar de alta un modelo de estuche (5)
+    - un modelo de estuche tiene marca,color,material,codigo
+    - indicar la cantidad de stock (o no) que posee el modelo
 
-*como usuario vendedor quiero poder dar de alta un modelo de lente(5)
-criterios de aceptacion:
-*un modelo  de lente tiene marca
-*indicar la cantidad de stock (o no) que posee el modelo
+2. como usuario vendedor quiero poder dar de alta un modelo de cristal (5)
+    - un modelo  de cristal tiene marca
+    - indicar la cantidad de stock (o no) que posee el modelo
 
-*como usuario vendedor quiero poder ver el stock de un modelo de estuche(5)
-criterios de aceptacion:
-*quiero poder buscar el stock indicando marca, color, material y codigo
+3. como usuario vendedor quiero poder ver el stock de un modelo de estuche (5)
+    - quiero poder buscar el stock indicando marca, color, material y codigo
 
-*como usuario vendedor quiero poder ver el stock de un modelo de lente(5)
-criterios de aceptacion:
-*quiero poder buscar el stock indicando marca
+4. como usuario vendedor quiero poder ver el stock de un modelo de cristal (5)
+    - quiero poder buscar el stock indicando marca
 
-tareas que se tomarán el siguiente sprint:
+###tareas que se tomarán el siguiente sprint:
 
-*como usuario vendedor quiero poder eliminar de mi stock un anteojo
-criterios de aceptacion:
-*quiero poder disminuir el stock del anteojo
+1. como usuario vendedor quiero poder eliminar de mi stock un anteojo
+    - quiero poder disminuir el stock del anteojo
 
-*como usuario vendedor quiero poder eliminar de mi stock un cristal
-criterios de aceptacion:
-*quiero poder disminuir el stock del cristal
+2. como usuario vendedor quiero poder eliminar de mi stock un cristal
+    - quiero poder disminuir el stock del cristal
 
-*como usuario vendedor quiero poder ver el precio de venta del stock de un modelo de lente
+3. como usuario vendedor quiero poder ver el precio de venta y stock de un modelo de cristal
+    - quiero poder buscar el precio de venta y stock indicando marca
 
-*como usuario vendedor quiero ver el stock de lentes con su respectivo precio de compra
+4. como usuario vendedor quiero poder ver el precio de compra y stock de un modelo de cristal 
+    - quiero poder buscar el precio de compra y stock indicando marca
+    
+5. como usuario vendedor quiero poder ver el precio de venta y stock de un modelo de estuche 
+    - quiero poder buscar el precio de venta y stock indicando marca, color, material y codigo
+    
+6. como usuario vendedor quiero poder ver el precio de compra y stock de un modelo de estuche
+    - quiero poder buscar el precio de compra y stock indicando marca, color, material y codigo
+    
+7. como usuario vendedor quiero poder ver el precio de venta y stock de un modelo de anteojo 
+    - quiero poder buscar el precio de venta y stock indicando marca
 
-*como usuario vendedor quiero ver el stock de estuches con su respectivo precio de venta
-
-*como usuario vendedor quiero ver el stock de estuches con su respectivo precio de compra
-
-*como usuario vendedor quiero ver el stock de anteojos con su respectivo precio de venta
-
-*como usuario vendedor quiero ver el stock de anteojos con su respectivo precio de compra
+8. como usuario vendedor quiero poder ver el precio de compra y stock de un modelo de anteojo
+    - quiero poder buscar el precio de compra y stock indicando marca
