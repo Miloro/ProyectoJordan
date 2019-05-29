@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f47b8d9e-8ba8-401e-ab11-8289d2543106",
+		"_postman_id": "f0553edf-23b6-4e05-a835-96163628aece",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"Ray-Ban\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\", \n\t\"stock\" : \"10\"\n}"
+							"raw": "{ \n\t\"marca\" : \"aaa\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\", \n\t\"stock\" : \"21\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/estuche",
@@ -34,6 +34,120 @@
 							"path": [
 								"api",
 								"estuche"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ESTUCHE: Consultar stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&marca=Los+piojos&codigo=E001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "color",
+									"value": "Negro"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "marca",
+									"value": "Los+piojos"
+								},
+								{
+									"key": "codigo",
+									"value": "E001"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRISTAL",
+			"item": [
+				{
+					"name": "POST-alta modelo de cristal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cristal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consigo un cristal de una marca espesifica",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stock?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
 							]
 						}
 					},
@@ -55,57 +169,6 @@
 					"port": "3000",
 					"path": [
 						"api"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ESTUCHE: Consultar stock",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/estuche/stock?marca=Ray-Ban&material=Plastico&color=Negro&codigo=E001",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"estuche",
-						"stock"
-					],
-					"query": [
-						{
-							"key": "marca",
-							"value": "Ray-Ban"
-						},
-						{
-							"key": "material",
-							"value": "Plastico"
-						},
-						{
-							"key": "color",
-							"value": "Negro"
-						},
-						{
-							"key": "codigo",
-							"value": "E001"
-						},
-						{
-							"key": null,
-							"value": null
-						},
-						{
-							"key": null,
-							"value": null
-						},
-						{
-							"key": null,
-							"value": null
-						}
 					]
 				}
 			},
