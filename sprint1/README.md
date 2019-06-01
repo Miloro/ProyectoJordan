@@ -61,7 +61,7 @@
     * Quiero poder buscar el precio de compra y stock indicando marca
 
 
-9. . Como usuario quiero poder dar de alta un modelo de anteojo (5)
+9. Como usuario quiero poder dar de alta un modelo de anteojo (5)
     * Un modelo de anteojo tiene marca,tipo,material,codigo
     * Indicar la cantidad de stock (o no) que posee el modelo
     
