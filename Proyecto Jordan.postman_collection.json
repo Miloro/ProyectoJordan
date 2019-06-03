@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f0553edf-23b6-4e05-a835-96163628aece",
+		"_postman_id": "1c208481-7008-407a-9f25-bfa0e7dce505",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"aaa\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\", \n\t\"stock\" : \"21\"\n}"
+							"raw": "{ \n\t\"marca\" : \"aaa\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/estuche",
@@ -45,7 +45,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&marca=Los+piojos&codigo=E001",
+							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&codigo=E001&marca=laa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -78,12 +78,66 @@
 									"value": null
 								},
 								{
+									"key": "codigo",
+									"value": "E001"
+								},
+								{
 									"key": "marca",
-									"value": "Los+piojos"
+									"value": "laa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ESTUCHE: Consultar stock con precio Compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=la",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "color",
+									"value": "Negro"
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
 								},
 								{
 									"key": "codigo",
 									"value": "E001"
+								},
+								{
+									"key": "marca",
+									"value": "la"
 								}
 							]
 						}

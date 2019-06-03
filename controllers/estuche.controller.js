@@ -2,7 +2,10 @@ let estucheRepository = require('../repositories/estuche.repository')
 
 
 exports.altaModeloEstuche = (req, res) => {
-    estucheRepository.altaModeloEstuche(req.body.marca, req.body.material, req.body.color, req.body.codigo, req.body.stock)
+    let precioVenta= req.body.precioVenta*100 ;
+    let precioCompra= req.body.precioCompra*100 ;
+
+    estucheRepository.altaModeloEstuche(req.body.marca, req.body.material, req.body.color, req.body.codigo, precioCompra, precioVenta, req.body.stock)
                         .then(estucheRegistrado => {
                                             res.status(200).json({
                                                 ok : true,
@@ -21,22 +24,33 @@ exports.altaModeloEstuche = (req, res) => {
 exports.stockDeEstuche = (req, res) =>{
     estucheRepository.stockDeEstuche(req.query.marca, req.query.material, req.query.color, req.query.codigo)
                         .then( stock =>{
-                            if(!stock){
-                                res.status(200).json({
-                                    ok: false,
-                                    message: "no existe un estuche con esas caracteristicas"
-                                });
-                            }else{
                                 res.status(200).json({
                                     ok:true,
                                     stock 
                                 });
                             }
-                        })
+                        )
                         .catch( err => {
-                            res.status(500).json({
+                            res.status(204).json({
                                 ok:false,
-                                err
+                                message: "No existe un estuche de esas caracteristicas"
+                            })
+                        });
+} 
+
+exports.stockDeEstucheConPrecioCompra = (req, res) =>{
+    estucheRepository.stockDeEstuche(req.query.marca, req.query.material, req.query.color, req.query.codigo)
+                        .then( stock =>{
+                                res.status(200).json({
+                                    ok:true,
+                                    stock 
+                                });
+                            }
+                        )
+                        .catch( err => {
+                            res.status(204).json({
+                                ok:false,
+                                message: "No existe un estuche con esas caracteristicas"
                             })
                         });
 } 
