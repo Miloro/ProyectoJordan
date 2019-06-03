@@ -19,7 +19,7 @@ describe('dao', ()=>{
   });
    
     it('should return 10 when I ask for Estuches stock', async () => {
-      await estucheRepository.altaModeloEstuche("Ray-Ban", "Plastico", "Negro", "E001",10);
+      await estucheRepository.altaModeloEstuche("Ray-Ban", "Plastico", "Negro", "E001",230.00, 100, 10);
         const result= await estucheRepository.stockDeEstuche("Ray-Ban", "Plastico", "Negro", "E001")
         assert.strictEqual(result.stock, 10);
     });

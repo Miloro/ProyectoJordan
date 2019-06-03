@@ -21,6 +21,14 @@ var estucheSchema = Schema({
         type : String,
         required: true 
     },
+    precioVenta: {
+        type: Number,
+        required: true
+    },
+    precioCompra: {
+        type: Number,
+        required: true
+    },
     stock: {
         type : Number, 
         default: 0
