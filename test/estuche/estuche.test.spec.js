@@ -1,4 +1,4 @@
-describe('dao', ()=>{
+describe('Estuche repository test', () => {
     const assert = require('assert');
     const mongoose = require('mongoose');
     const estucheRepository= require('../../repositories/estuche.repository');
@@ -25,3 +25,13 @@ describe('dao', ()=>{
     });
 
 });
+
+//var x= 89
+
+/*export.funcion = function(a,b){
+    x -> No esta declarada
+}*/
+
+/*export.agregarALgo = (a,b) => {
+    x -> Si lo encuentra y x=89
+}*/
