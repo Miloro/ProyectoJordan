@@ -4,7 +4,7 @@ let cristalRepository = require('../repositories/cristal.repository')
 exports.altaModeloCristal = (req, res) => {
     let precioCompra = req.body.precioCompra*100 ;
     let precioVenta  = req.body.precioVenta*100 ;
-    cristalRepository.altaModeloCristal(req.body.marca, req.body.stock, precioCompra,precioVenta)
+    cristalRepository.altaModeloCristal(req.body.marca, req.body.stock,req.body.material, req.body.tipo, precioCompra,precioVenta)
                         .then(cristalRegistrado => {
                                             res.status(200).json({
                                                 ok : true,

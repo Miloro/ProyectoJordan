@@ -1,6 +1,15 @@
 var mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
+var Material = {
+    values: ["CRISTAL", "VIDRIO"],
+    message : '{VALUE} no es un material permitido'
+};
+
+var Tipo = {
+    values: ["BI_FOCAL", "MULTIFOCAL"],
+    message : '{VALUE} no es un tipo permitido'
+}
 
 // Setup schema
 var cristalSchema = Schema({
@@ -13,6 +22,16 @@ var cristalSchema = Schema({
         type : Number, 
         default: 0
     },
+    material: {
+        type: String,
+        require: true,
+        enum: Material
+    },
+    tipo: {
+        type: String,
+        require: true,
+        enum: Tipo
+    },
     precioCompra: {
         type : Number,
         default: 0
@@ -21,7 +40,7 @@ var cristalSchema = Schema({
         type : Number,
         default : 0
     }
-
+    
 });
 
 // Export MedicalCard model

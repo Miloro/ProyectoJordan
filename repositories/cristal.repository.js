@@ -6,10 +6,12 @@ const Cristal = require('../models/cristal.model');
 // // Lean sobre eso en documentacion de Node (videos en youtube tambien son validos) para saber como se usan y para que sirven.
 // // LEAN LEAN LEAN LEEEEAAANNN!!!!!
 
-exports.altaModeloCristal =(marca, stock = 0, precioCompra, precioVenta)  => {
+exports.altaModeloCristal =(marca, stock = 0, material, tipo, precioCompra, precioVenta)  => {
     return new Cristal({
         marca: marca,
         stock: stock,
+        material: material,
+        tipo: tipo,
         precioCompra: precioCompra,
         precioVenta : precioVenta
     }).save().then(cristalRegistrado =>{cristalRegistrado.precioCompra = cristalRegistrado.precioCompra/100;
