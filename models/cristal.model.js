@@ -12,8 +12,16 @@ var cristalSchema = Schema({
     stock: {
         type : Number, 
         default: 0
+    },
+    precioCompra: {
+        type : Number,
+        default: 0
+    },
+    precioVenta: {
+        type : Number,
+        default : 0
     }
-    
+
 });
 
 // Export MedicalCard model

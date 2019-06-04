@@ -6,15 +6,38 @@ const Cristal = require('../models/cristal.model');
 // // Lean sobre eso en documentacion de Node (videos en youtube tambien son validos) para saber como se usan y para que sirven.
 // // LEAN LEAN LEAN LEEEEAAANNN!!!!!
 
-exports.altaModeloCristal =(marca, stock = 0)  => {
+exports.altaModeloCristal =(marca, stock = 0, precioCompra, precioVenta)  => {
     return new Cristal({
         marca: marca,
-        stock: stock
-    }).save();                
-};
+        stock: stock,
+        precioCompra: precioCompra,
+        precioVenta : precioVenta
+    }).save().then(cristalRegistrado =>{cristalRegistrado.precioCompra = cristalRegistrado.precioCompra/100;
+                                        cristalRegistrado.precioVenta  = cristalRegistrado.precioVenta/100; 
+                                        return cristalRegistrado});                
+}
+
 
 exports.stockDeCristal = (marca) =>{
     return Cristal.findOne({
         marca: marca
     },{stock:1, _id: 0});
+}
+
+exports.stockConPrecioCompraDeCristal = (marca) =>{
+    return Cristal.findOne({
+        marca:marca
+    },{stock:1, precioCompra:1, _id:0}).then(res =>{
+        res.precioCompra = res.precioCompra/100
+        return res
+    });
+}
+
+exports.stockConPrecioVentaDeCristal = (marca) =>{
+    return Cristal.findOne({
+        marca:marca       
+    },{stock:1 , precioVenta:1, _id:0}).then(res =>{
+        res.precioVenta = res.precioVenta/100
+        return res
+    })
 }

@@ -9,8 +9,11 @@ let cristalController = require('../controllers/cristal.controller');
 // PUT: Se utiliza para reemplazar un registro existente por otra.
 // PATCH: Se utiliza para modificar solo una parte de una entidad que ya existe (ejemplo: subirle el stock).
 
-app.post('/', cristalController.altaModeloCristal);
 app.get('/stock', cristalController.stockDeCristal);
+app.get('/stockConPrecioCompra', cristalController.stockConPrecioCompra)
+app.get('/stockConPrecioVenta', cristalController.stockConPrecioVenta)
+app.post('/', cristalController.altaModeloCristal);
+
 
 
 module.exports = app;
