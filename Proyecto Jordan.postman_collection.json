@@ -181,6 +181,38 @@
 					"response": []
 				},
 				{
+					"name": "PUT- disminuir stock de cristal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\" : \"copado\",\n\t\"cantidad\" : \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/disminuirStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"disminuirStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET- consultar stock",
 					"request": {
 						"method": "GET",

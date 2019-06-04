@@ -12,6 +12,7 @@ let cristalController = require('../controllers/cristal.controller');
 app.get('/stock', cristalController.stockDeCristal);
 app.get('/stockConPrecioCompra', cristalController.stockConPrecioCompra)
 app.get('/stockConPrecioVenta', cristalController.stockConPrecioVenta)
+app.put('/disminuirStock', cristalController.disminuirStock )
 app.post('/', cristalController.altaModeloCristal);
 
 

@@ -88,3 +88,26 @@ exports.stockConPrecioVenta =(req, res) =>{
                             })
                         })
 }
+
+exports.disminuirStock =(req, res) =>{
+    cristalRepository.disminuirStock(req.body.marca, req.body.cantidad)
+                        .then(cristal =>{
+                            if(!cristal){
+                                res.status(400).json({
+                                    ok: false,
+                                    message:"no existe un cristal con esa marca"
+                                })
+                            }else{
+                                res.status(200).json({
+                                    ok: true,
+                                    cristal
+                                })
+                            }
+                        })
+                        .catch( err => {
+                            res.status(500).json({
+                                ok: false,
+                                err
+                            })
+                        })
+}
