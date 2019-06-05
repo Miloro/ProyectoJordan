@@ -56,16 +56,14 @@
 
 
 
-7.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo cristal (5)
+1.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo cristal (5)
 * Quiero poder buscar el precio de compra y stock indicando marca
 
 
-9. Como usuario dueño quiero poder ver el precio de venta, precio de compra y stock de un modelo de estuche(3)
+2. Como usuario dueño quiero poder ver el precio de venta, precio de compra y stock de un modelo de estuche(3)
 * Quiero poder buscar el precio de venta y stock indicando marca, color, material y codigo
 
 
-14.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo de anteojo (5)
+3.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo de anteojo (5)
 * Quiero poder buscar el precio de compra y stock indicando marca.
-
-
-
+4. Pendiente de anteojo. 
