@@ -11,6 +11,7 @@ let estucheController = require('../controllers/estuche.controller');
 
 app.get('/stock', estucheController.stockDeEstuche);
 app.get('/stockConPrecioCompra', estucheController.stockDeEstucheConPrecioCompra);
+app.patch('/stock', estucheController.quitarDelStock);
 app.post('/', estucheController.altaModeloEstuche);
 
 module.exports = app;
