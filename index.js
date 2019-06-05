@@ -47,8 +47,8 @@ let anteojoRoutes = require('./api-routes/anteojo.routes');
 // Si ponemos primero la raiz (/) va a entrar todo por a
 //  hi y el resto de las rutas QUEDAN INACCESIBLES.
 app.use('/api/estuche', estucheRoutes);
-app.use('/api/cristal', cristalRoutes);
-app.use('api/anteojo',anteojoRoutes);
+app.use('/api/cristal', cristalRoutes)
+app.use('api/anteojo',anteojoRoutes)
 app.use('/api', appRoutes);
 
 
