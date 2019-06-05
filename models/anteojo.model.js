@@ -21,6 +21,17 @@ var anteojoSchema = Schema({
         type : String,
         required: true
     },
+
+    precioCompra: {
+        type : Number,
+        required : true,
+    },
+
+    precioVenta: {
+        type : Number,
+        required: true,
+    },
+
     stock: {
         type : Number,
         default: 0
