@@ -42,13 +42,11 @@
 ### Retrospectiva
 
 * Que nos llevamos para hacer:
-    * Hacer integraciones a Master mas seguidas.
-    * Tener preparado el entorno para la Demo. 
-    * Cada User Story tiene que tener estimacion.
-    * Grafico de Velocidad Embebido en el readme.
+    * Hacer integraciones a ramas generales mas seguidas.
     
 * Negativo:
-          
+       *Fallas en la organizacion de tiempos.
+
 * Positivo:
     * Desafios con aprendizaje de nuevas tecnologias y funcionalidad. 
 
@@ -58,67 +56,16 @@
 
 
 
-1.Como usuario  vendedor quiero poder descontar una unidad de mi stock un anteojo (3)
-
-* Quiero poder disminuir el stock del anteojo
-
-2.Como usuario dueño quiero poder descontar una unidad de mi stock un anteojo (3)
-
-* Quiero poder disminuir el stock del anteojo
-
-3.Como usuario  vendedor quiero poder descontar una unidad de mi stock de un cristal(3)
-
-* Quiero poder disminuir el stock del cristal
-
-4.Como usuario  dueño quiero poder descontar una unidad de mi stock de un cristal(3)
-
-* Quiero poder disminuir el stock del cristal
-
-5. Como usuario vendedor quiero poder ver el precio de venta y stock de un modelo de cristal(3)
-
-* Quiero poder buscar el precio de venta y stock indicando marca
-
-6. Como usuario dueño quiero poder ver el precio de venta  y stock de un modelo de cristal(3)
-
-* Quiero poder buscar el precio de venta y stock indicando marca
-
-7.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo cristal (3)
-
+7.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo cristal (5)
 * Quiero poder buscar el precio de compra y stock indicando marca
 
-8.Como usuario vendedor quiero poder ver el precio de venta, y stock de un modelo de estuche(3)
 
+9. Como usuario dueño quiero poder ver el precio de venta, precio de compra y stock de un modelo de estuche(3)
 * Quiero poder buscar el precio de venta y stock indicando marca, color, material y codigo
 
-9. Como usuario dueño quiero poder ver el precio de venta, precio de compra y stock de un modelo de estuche(2)
-
-* Quiero poder buscar el precio de venta y stock indicando marca, color, material y codigo
-
-10.Como usuario vendedor quiero poder ver el precio de venta y stock de un modelo de estuche (2)
-
-* Quiero poder buscar el precio de compra y stock indicando marca, color, material y codigo
-
-11.Como usuario dueño quiero poder ver el precio de venta y stock de un modelo de estuche (2)
-
-*Quiero poder buscar el precio de compra y stock indicando marca, color, material y codigo
-
-12.Como usuario vendedor quiero poder ver el precio de venta y stock de un modelo de anteojo (3)
-
-* Quiero poder buscar el precio de venta y stock indicando marca
-
-13.Como usuario dueño quiero poder ver el precio de venta y stock de un modelo de anteojo (3)
-
-* Quiero poder buscar el precio de venta y stock indicando marca
 
 14.Como usuario Dueño quiero poder ver el precio de compra, precio de venta y stock de un modelo de anteojo (5)
 * Quiero poder buscar el precio de compra y stock indicando marca.
-
-15.Como usuario  vendedor quiero poder descontar una unidad de mi stock de un estuche (2)
-
-* Quiero poder disminuir el stock un estuche
-
-16. Como usuario  dueño quiero poder descontar una unidad de mi stock de un estuche (2)
-*  Quiero poder disminuir el stock un estuche
 
 
 
