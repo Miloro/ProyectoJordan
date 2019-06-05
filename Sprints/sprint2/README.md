@@ -37,7 +37,6 @@
     
     
     
-![Grafico de Velocidad](https://github.com/Miloro/ProyectoJordan/blob/ftAnteojo/Sprints/sprint1/grafico%20velocidad%20sprint%201.png)
 
 
 ### Retrospectiva
