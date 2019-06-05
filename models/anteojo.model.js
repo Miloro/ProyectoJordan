@@ -35,7 +35,7 @@ var anteojoSchema = Schema({
     stock: {
         type : Number,
         default: 0
-    }
+    },
 
 });
 

@@ -7,22 +7,28 @@ exports.altaModeloAnteojo = (marca, tipo, material, codigo,precioCompra,precioVe
         material: material,
         codigo: codigo,
         precioCompra:precioCompra,
-        precioVenta:precioVenta,
-        stock: stock
-    }).save();
+        precioVenta: precioVenta,
+        stock: stock,
+    }).save().then(anteojoRegistrado =>{anteojoRegistrado.precioCompra = anteojoRegistrado.precioCompra/100;
+        anteojoRegistrado.precioVenta  = anteojoRegistrado.precioVenta/100;
+        return anteojoRegistrado});
+
 };
 
 exports.findAll = () => {
     return Anteojo.find();
-}
+};
 
 exports.stockDeAnteojo = (marca, tipo, material, codigo) => {
     return Anteojo.findOne({marca: marca,
             tipo: tipo,
             material: material,
             codigo: codigo},
-        { stock: 1, _id: 0});
-}
+        { stock: 1, _id: 0})
+        .then(res => {res.precioVenta = res.precioVenta/100;
+        return res});
+
+};
 
 exports.stockDeAnteojoConPrecioCompra = (marca,tipo, material, codigo) => {
     return Anteojo.findOne({marca: marca,
@@ -33,7 +39,7 @@ exports.stockDeAnteojoConPrecioCompra = (marca,tipo, material, codigo) => {
         .then(res => {res.precioVenta = res.precioVenta/100;
             res.precioCompra = res.precioCompra/100;
             return res});
-}
+};
 
 exports.stockDeAnteojoConPrecioVenta = (marca,tipo, codigo) => {
     return Anteojo.findOne({
@@ -48,5 +54,5 @@ exports.stockDeAnteojoConPrecioVenta = (marca,tipo, codigo) => {
             res.precioCompra = res.precioCompra / 100;
             return res
         });
-}
+};
 

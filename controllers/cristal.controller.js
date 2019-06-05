@@ -16,7 +16,7 @@ exports.altaModeloCristal = (req, res) => {
                                             error
                                         })
                         });
-}
+};
 
 exports.stockDeCristal = (req, res) =>{
     cristalRepository.stockDeCristal(req.query.marca)
@@ -39,4 +39,4 @@ exports.stockDeCristal = (req, res) =>{
                                 err
                             })
                         });
-}
+};

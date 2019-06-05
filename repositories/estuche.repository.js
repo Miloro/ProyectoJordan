@@ -18,7 +18,7 @@ exports.altaModeloEstuche = (marca, material, color, codigo, stock = 0)  => {
 
 exports.findAll = () => {
     return Estuche.find();
-}
+};
 
 exports.stockDeEstuche = (marca, material, color, codigo) => {
     return Estuche.findOne({marca: marca, 
@@ -26,4 +26,4 @@ exports.stockDeEstuche = (marca, material, color, codigo) => {
                             color: color, 
                             codigo: codigo},
                             { stock: 1, _id: 0});
-}
+};

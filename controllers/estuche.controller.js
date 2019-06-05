@@ -16,7 +16,7 @@ exports.altaModeloEstuche = (req, res) => {
                                             error
                                         })
                         });
-}
+};
 
 exports.stockDeEstuche = (req, res) =>{
     estucheRepository.stockDeEstuche(req.query.marca, req.query.material, req.query.color, req.query.codigo)
@@ -39,4 +39,4 @@ exports.stockDeEstuche = (req, res) =>{
                                 err
                             })
                         });
-} 
+};
