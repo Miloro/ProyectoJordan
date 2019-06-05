@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "53a2d788-fb9b-4134-a58b-e420ebc25257",
+		"name": "Proyecto Jordan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ESTUCHE",
+			"item": [
+				{
+					"name": "ESTUCHE: Dar de alta un modelo en el sistema.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"marca\" : \"aaa\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/estuche",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ESTUCHE: Consultar stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&codigo=E001&marca=aaa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "color",
+									"value": "Negro"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "codigo",
+									"value": "E001"
+								},
+								{
+									"key": "marca",
+									"value": "aaa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ESTUCHE: Consultar stock con precio Compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=aaa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "color",
+									"value": "Negro"
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "codigo",
+									"value": "E001"
+								},
+								{
+									"key": "marca",
+									"value": "aaa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRISTAL",
+			"item": [
+				{
+					"name": "POST-alta modelo de cristal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\",\n\t\"material\": \"CRISTAL\",\n\t\"tipo\": \"MULTIFOCAL\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\" : \"120.90\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cristal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT- disminuir stock de cristal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\" : \"copado\",\n\t\"cantidad\" : \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/disminuirStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"disminuirStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stock?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock con precio Compra",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock con precio Venta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stockConPrecioVenta"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET- Verificacion de servicio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
