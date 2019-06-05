@@ -14,8 +14,6 @@ exports.stockDeEstucheConPrecioCompra = (marca, material, color, codigo) => {
                             color: color, 
                             codigo: codigo},
 
-                            { stock: 1, _id: 0});
-};
 
                             { stock: 1, precioVenta: 1, precioCompra:1, _id: 0})
                     .then(res => {res.precioVenta = res.precioVenta/100;
