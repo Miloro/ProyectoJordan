@@ -48,7 +48,7 @@ let anteojoRoutes = require('./api-routes/anteojo.routes');
 //  hi y el resto de las rutas QUEDAN INACCESIBLES.
 app.use('/api/estuche', estucheRoutes);
 app.use('/api/cristal', cristalRoutes)
-app.use('api/anteojo',anteojoRoutes)
+app.use('/api/anteojo',anteojoRoutes)
 app.use('/api', appRoutes);
 
 
