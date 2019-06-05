@@ -95,7 +95,7 @@ exports.disminuirStock =(req, res) =>{
                             if(!cristal){
                                 res.status(400).json({
                                     ok: false,
-                                    message:"no existe un cristal con esa marca"
+                                    message:"no se pudo realizar la operacion"
                                 })
                             }else{
                                 res.status(200).json({

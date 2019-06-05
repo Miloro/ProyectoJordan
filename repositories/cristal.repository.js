@@ -45,12 +45,9 @@ exports.stockConPrecioVentaDeCristal = (marca) =>{
 }
 
 exports.disminuirStock = (marca , cantidad) =>{
-    return Cristal.findOne({
-        marca:marca
-    },{stock:1}).then(cristal =>{
-        if(cristal.stock >= cantidad){
-            cristal.stock -= cantidad;
-        }
-        return cristal.save()
-    })
+    return Cristal.findOneAndUpdate(
+        {marca : marca , "stock": {$gte: cantidad}},
+        {$inc:{stock: (-cantidad)}},
+        {new : true}
+    )
 }
