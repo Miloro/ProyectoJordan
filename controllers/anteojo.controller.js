@@ -61,19 +61,43 @@ exports.stockDeAnteojoConPrecioCompra = (req, res) =>{
         });
 }
 
-exports.stockDeAnteojoConPrecioVenta = (req, res) =>{
-    anteojoRepository.stockDeAnteojo(req.query.marca,req.query.tipo, req.query.material, req.query.codigo)
-        .then( stock =>{
+exports.stockDeAnteojoConPrecioVenta = (req, res) => {
+    anteojoRepository.stockDeAnteojo(req.query.marca, req.query.tipo, req.query.material, req.query.codigo)
+        .then(stock => {
                 res.status(200).json({
-                    ok:true,
+                    ok: true,
                     stock
                 });
             }
         )
-        .catch( err => {
+        .catch(err => {
             res.status(204).json({
-                ok:false,
+                ok: false,
                 message: "No existe un anteojo con esas caracteristicas"
             })
         });
 }
+
+exports.disminuirStock =(req, res) =>{
+        anteojoRepository.disminuirStock(req.body.marca,req.body.codigo, req.body.cantidad)
+            .then(cristal =>{
+                if(!cristal){
+                    res.status(400).json({
+                        ok: false,
+                        message:"no se pudo realizar la operacion"
+                    })
+                }else{
+                    res.status(200).json({
+                        ok: true,
+                        cristal
+                    })
+                }
+            })
+            .catch( err => {
+                res.status(500).json({
+                    ok: false,
+                    err
+                })
+            });
+
+    }

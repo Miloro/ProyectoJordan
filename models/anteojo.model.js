@@ -39,4 +39,4 @@ var anteojoSchema = Schema({
 
 });
 
-module.exports = mongoose.model('Antejo', anteojoSchema);
+module.exports = mongoose.model('Anteojo', anteojoSchema);
