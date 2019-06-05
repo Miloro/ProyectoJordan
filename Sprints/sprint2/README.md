@@ -35,7 +35,7 @@
 10. Como usuario quiero poder descontar una unidad de mi stock de un estuche (2)
     * Quiero poder disminuir el stock un estuche
     
-    
+    ![grafico velocidad](https://github.com/Miloro/ProyectoJordan/blob/dev/Sprints/sprint2/grafico%20de%20velocidad.PNG)
     
 
 
