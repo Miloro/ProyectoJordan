@@ -54,3 +54,26 @@ exports.stockDeEstucheConPrecioCompra = (req, res) =>{
                             })
                         });
 };
+
+exports.quitarDelStock = (req, res) =>{
+    estucheRepository.quitarDelStock(req.body.cantidadADescontar, req.body.codigo)
+                    .then(estucheActualizado => {
+                        if(!estucheActualizado){
+                            res.status(500).json({
+                                ok:false,
+                                message:"No existe stock suficiente de ese modelo o no existe el modelo"
+                            })
+                        }
+                        res.status(200).json({
+                            ok:true,
+                            estucheActualizado
+                            });
+                        }
+                    )
+                    .catch(err => {
+                        res.status(500).json({
+                            ok:false,
+                            err
+                        })
+                    })
+}
