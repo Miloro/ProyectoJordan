@@ -5,7 +5,7 @@ exports.altaModeloAnteojo = (req, res) => {
     let precioVenta= req.body.precioVenta*100 ;
     let precioCompra= req.body.precioCompra*100 ;
 
-    anteojoRepository.altaModeloAnteojo(req.body.marca, req.body.tipo,req.body.material, req.body.codigo,req.body.precioCompra,req.bodi.precioVenta, req.body.stock)
+    anteojoRepository.altaModeloAnteojo(req.body.marca, req.body.tipo,req.body.material, req.body.codigo,req.body.precioCompra,req.body.precioVenta, req.body.stock)
         .then(anteojoRegistrado => {
             res.status(200).json({
                 ok : true,

@@ -7,20 +7,21 @@ exports.altaModeloAnteojo = (marca, tipo, material, codigo,precioCompra,precioVe
         codigo: codigo,
         precioCompra : precioCompra,
         precioVenta : precioVenta,
-        stock: stock,
+        stock: stock
     }).save().then(anteojoRegistrado =>{anteojoRegistrado.precioCompra = anteojoRegistrado.precioCompra/100;
-        anteojoRegistrado.precioVenta = anteojoRegistrado.precioVenta/100;
-        return anteojoRegistrado});
+                                      anteojoRegistrado.precioVenta = anteojoRegistrado.precioVenta/100;
+                                         return anteojoRegistrado});
 
-};
+}
 
-exports.stockDeAnteojo = (marca, tipo, material, codigo) => {
-    return Anteojo.findOne({marca: marca,
+exports.stockDeAnteojo = (marca, tipo,material, codigo) => {
+     return Anteojo.findOne({marca: marca,
             tipo: tipo,
             material: material,
             codigo: codigo},
         { precioVenta: 1, stock: 1, _id: 0})
-        .then(res => {res.precioVenta = res.precioVenta / 100;
+        .then(res => {if (!res) return res
+            res.precioVenta = res.precioVenta/100;
         return res});
 
 }
@@ -37,7 +38,7 @@ exports.stockDeAnteojoConPrecioCompra = (marca,tipo, material, codigo) => {
 }
 
 exports.stockDeAnteojoConPrecioVenta = (marca,tipo,material, codigo,) => {
-    return Anteojo.findOne({
+     return Anteojo.findOne({
             marca: marca,
             tipo: tipo,
             material: material,
@@ -45,8 +46,8 @@ exports.stockDeAnteojoConPrecioVenta = (marca,tipo,material, codigo,) => {
         },
         {precioVenta: 1, precioCompra:1,stock: 1,  _id: 0})
         .then(res => {
-            res.precioVenta = res.precioVenta / 100;
-            res.precioCompra = res.precioCompra / 100;
+            res.precioVenta = res.precioVenta/100;
+            res.precioCompra = res.precioCompra/100;
             return res
         })
 }
