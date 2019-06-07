@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1c208481-7008-407a-9f25-bfa0e7dce505",
+		"_postman_id": "4e93eb09-2e97-4520-82d6-cacf24ba04f2",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"name": "ESTUCHE: Dar de alta un modelo en el sistema.",
 					"request": {
-						"method": "PATCH",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"aaa\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
+							"raw": "{ \n\t\"marca\" : \"Ray-Ban\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/estuche",
@@ -45,7 +45,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&codigo=E001&marca=laa",
+							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -83,7 +83,7 @@
 								},
 								{
 									"key": "marca",
-									"value": "laa"
+									"value": "Ray-Ban"
 								}
 							]
 						}
@@ -96,7 +96,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=la",
+							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -137,7 +137,7 @@
 								},
 								{
 									"key": "marca",
-									"value": "la"
+									"value": "Ray-Ban"
 								}
 							]
 						}
@@ -147,10 +147,30 @@
 				{
 					"name": "ESTUCHE: Quitar del stock",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"E001\",\n\t\"cantidadADescontar\": 1\n}"
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/api/estuche/stock",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche",
+								"stock"
+							]
 						}
 					},
 					"response": []
@@ -174,7 +194,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\"\n}"
+							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\",\n\t\"material\": \"CRISTAL\",\n\t\"tipo\": \"MULTIFOCAL\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\" : \"120.90\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/cristal",
@@ -192,7 +212,39 @@
 					"response": []
 				},
 				{
-					"name": "GET- consigo un cristal de una marca espesifica",
+					"name": "PUT- disminuir stock de cristal",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\" : \"copado\",\n\t\"cantidad\" : \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/disminuirStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"disminuirStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -207,6 +259,67 @@
 								"api",
 								"cristal",
 								"stock"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock con precio Compra",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock con precio Venta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stockConPrecioVenta"
 							],
 							"query": [
 								{
