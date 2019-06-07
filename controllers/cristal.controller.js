@@ -44,6 +44,57 @@ exports.stockDeCristal = (req, res) =>{
 
 };
 
+exports.stockConPrecioCompra = (req, res)=>{
+    cristalRepository.stockConPrecioCompraDeCristal(req.query.marca)
+                        .then( stock =>{
+                                res.status(200).json({
+                                    ok:true,
+                                    stock,
+                                });
+                            }
+                        )
+                        .catch( err => {
+                            res.status(400).json({
+                                ok:false,
+                                message:"no existe un cristal con esa marca"
+                            });
+                        })
+}
+
+exports.stockConPrecioVenta =(req, res) =>{
+    cristalRepository.stockConPrecioVentaDeCristal(req.query.marca)
+                        .then( stock =>{
+                                res.status(200).json({
+                                    ok: true,
+                                    stock
+                                })
+                            }
+                        )
+                        .catch( err => {
+                            res.status(400).json({
+                                ok : false,
+                                message : "no existe un cristal con esa marca"
+                            })
+                        })
+}
+
+exports.disminuirStock =(req, res) =>{
+    cristalRepository.disminuirStock(req.body.marca, req.body.cantidad)
+                        .then(cristal =>{
+                                res.status(200).json({
+                                    ok: true,
+                                    cristal
+                                })
+                            }
+                        )
+                        .catch( err => {
+                            res.status(400).json({
+                                ok: false,
+                                message:"No se pudo realizar la operacion"
+                            })
+                        })
+                    }
+
 
 
 

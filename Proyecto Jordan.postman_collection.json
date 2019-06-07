@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1c208481-7008-407a-9f25-bfa0e7dce505",
+		"_postman_id": "4e93eb09-2e97-4520-82d6-cacf24ba04f2",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"name": "ESTUCHE: Dar de alta un modelo en el sistema.",
 					"request": {
-						"method": "PATCH",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -22,7 +22,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"aaa\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
+							"raw": "{ \n\t\"marca\" : \"Ray-Ban\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/estuche",
@@ -45,7 +45,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&codigo=E001&marca=laa",
+							"raw": "http://localhost:3000/api/estuche/stock?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -83,7 +83,7 @@
 								},
 								{
 									"key": "marca",
-									"value": "laa"
+									"value": "Ray-Ban"
 								}
 							]
 						}
@@ -96,7 +96,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=la",
+							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -137,7 +137,7 @@
 								},
 								{
 									"key": "marca",
-									"value": "la"
+									"value": "Ray-Ban"
 								}
 							]
 						}
@@ -147,10 +147,30 @@
 				{
 					"name": "ESTUCHE: Quitar del stock",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"E001\",\n\t\"cantidadADescontar\": 1\n}"
+						},
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/api/estuche/stock",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"estuche",
+								"stock"
+							]
 						}
 					},
 					"response": []
@@ -174,7 +194,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\"\n}"
+							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\",\n\t\"material\": \"CRISTAL\",\n\t\"tipo\": \"MULTIFOCAL\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\" : \"120.90\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/cristal",
@@ -192,7 +212,39 @@
 					"response": []
 				},
 				{
-					"name": "GET- consigo un cristal de una marca espesifica",
+					"name": "PUT- disminuir stock de cristal",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\" : \"copado\",\n\t\"cantidad\" : \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -212,6 +264,280 @@
 								{
 									"key": "marca",
 									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock con precio Compra",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET- consultar stock con precio Venta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?marca=copado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cristal",
+								"stockConPrecioVenta"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "copado"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ANTEOJO",
+			"item": [
+				{
+					"name": "ANTEOJO: Stock de anteojo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/anteojo/stock?material=Plastico&tipo=comun&marca=Ray-Ban&codigo=A10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "tipo",
+									"value": "comun"
+								},
+								{
+									"key": "marca",
+									"value": "Ray-Ban"
+								},
+								{
+									"key": "codigo",
+									"value": "A10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ANTEOJO: Dar de alta un antejo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\t\"marca\" : \"Ray-Ban\",\n\t\"tipo\"  : \"comun\",\n\t\"material\" : \"Plastico\", \n\t\"codigo\" : \"A10\",\n\t\"precioCompra\" : 10,\n\t\"precioVenta\" : 20,\n\t\"stock\" : \"2\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/anteojo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ANTEOJO: Dar de alta un antejo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n\t\"marca\" : \"x\",\n\t\"tipo\"  : \"comun\",\n\t\"material\" : \"Plastico\", \n\t\"codigo\" : \"A10\",\n\t\"precioCompra\" : 10,\n\t\"precioVenta\" : 20,\n\t\"stock\" : \"2\"\n}\n"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/anteojo/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"anteojo",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'none'"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2019 13:49:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot POST /api/anteojo/</pre>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "ANTEOJO: Disminuir stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A10\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/anteojo/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ANTEOJO: Stock con precio compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/anteojo/stockConPrecioCompra?marca=Ray-Ban&tipo=comun&material=Plastico&codigo=A10",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "marca",
+									"value": "Ray-Ban"
+								},
+								{
+									"key": "tipo",
+									"value": "comun"
+								},
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "codigo",
+									"value": "A10"
 								}
 							]
 						}

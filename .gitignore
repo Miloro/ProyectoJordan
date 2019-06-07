@@ -3,6 +3,9 @@
 # Created by https://www.gitignore.io/api/linux,visualstudiocode,node
 # Edit at https://www.gitignore.io/?templates=linux,visualstudiocode,node
 
+### Webstorm ###
+.idea/*
+
 ### Linux ###
 *~
 
