@@ -27,6 +27,7 @@ exports.stockDeAnteojo = (marca, tipo,material, codigo) => {
 }
 
 exports.stockDeAnteojoConPrecioCompra = (marca,tipo, material, codigo) => {
+    console.log(marca,tipo, material, codigo);
     return Anteojo.findOne({marca: marca,
             tipo: tipo,
             material: material,
