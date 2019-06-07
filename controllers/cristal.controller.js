@@ -47,22 +47,16 @@ exports.stockDeCristal = (req, res) =>{
 exports.stockConPrecioCompra = (req, res)=>{
     cristalRepository.stockConPrecioCompraDeCristal(req.query.marca)
                         .then( stock =>{
-                            if(!stock){
-                                res.status(400).json({
-                                    ok:false,
-                                    message:"no existe un cristal con esa marca"
-                                });
-                            }else{
                                 res.status(200).json({
                                     ok:true,
                                     stock,
                                 });
                             }
-                        })
+                        )
                         .catch( err => {
-                            res.status(500).json({
+                            res.status(400).json({
                                 ok:false,
-                                err
+                                message:"no existe un cristal con esa marca"
                             });
                         })
 }
@@ -70,22 +64,16 @@ exports.stockConPrecioCompra = (req, res)=>{
 exports.stockConPrecioVenta =(req, res) =>{
     cristalRepository.stockConPrecioVentaDeCristal(req.query.marca)
                         .then( stock =>{
-                            if(!stock){
-                                res.status(400).json({
-                                    ok : false,
-                                    message : "no existe un cristal con esa marca"
-                                })
-                            }else{
                                 res.status(200).json({
                                     ok: true,
                                     stock
                                 })
                             }
-                        })
+                        )
                         .catch( err => {
-                            res.status(500).json({
-                                ok: false,
-                                err
+                            res.status(400).json({
+                                ok : false,
+                                message : "no existe un cristal con esa marca"
                             })
                         })
 }
@@ -93,22 +81,16 @@ exports.stockConPrecioVenta =(req, res) =>{
 exports.disminuirStock =(req, res) =>{
     cristalRepository.disminuirStock(req.body.marca, req.body.cantidad)
                         .then(cristal =>{
-                            if(!cristal){
-                                res.status(400).json({
-                                    ok: false,
-                                    message:"no se pudo realizar la operacion"
-                                })
-                            }else{
                                 res.status(200).json({
                                     ok: true,
                                     cristal
                                 })
                             }
-                        })
+                        )
                         .catch( err => {
-                            res.status(500).json({
+                            res.status(400).json({
                                 ok: false,
-                                err
+                                message:"No se pudo realizar la operacion"
                             })
                         })
                     }
