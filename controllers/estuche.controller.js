@@ -39,7 +39,7 @@ exports.stockDeEstuche = (req, res) =>{
 } 
 
 exports.stockDeEstucheConPrecioCompra = (req, res) =>{
-    estucheRepository.stockDeEstuche(req.query.marca, req.query.material, req.query.color, req.query.codigo)
+    estucheRepository.stockDeEstucheConPrecioCompra(req.query.marca, req.query.material, req.query.color, req.query.codigo)
                         .then( stock =>{
                                 res.status(200).json({
                                     ok:true,
