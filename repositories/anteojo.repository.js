@@ -58,7 +58,9 @@ exports.disminuirStock = (marca ,codigo, cantidad) =>{
         {marca : marca ,codigo: codigo, "stock": {$gte: cantidad}},
         {$inc:{stock: (-cantidad)}},
         {new : true}
-    )
+    ).then(res =>{
+        res.precioCompra = res.precioCompra/100;
+        res.precioVenta = res.precioVenta/100;
+        return res;
+    });
 }
-
-
