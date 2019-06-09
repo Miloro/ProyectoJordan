@@ -81,24 +81,16 @@ exports.stockDeAnteojoConPrecioVenta = (req, res) => {
 
 exports.disminuirStock =(req, res) =>{
         anteojoRepository.disminuirStock(req.body.marca,req.body.codigo, req.body.cantidad)
-            .then(cristal =>{
-                if(!cristal){
-                    res.status(400).json({
-                        ok: false,
-                        message:"no se pudo realizar la operacion"
-                    })
-                }else{
-                    res.status(200).json({
-                        ok: true,
-                        cristal
-                    })
-                }
-            })
-            .catch( err => {
-                res.status(500).json({
-                    ok: false,
-                    err
-                })
-            });
+                        .then(anteojo =>{
+                            res.status(200).json({
+                                ok: true,
+                                anteojo: anteojo
+                            })
+                        }).catch(err=>{
+                            res.status(400).json({
+                                ok: false,
+                                message:"no se pudo realizar la operacion"
+                            })
+                        });
 
-    }
+}
