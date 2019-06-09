@@ -547,6 +547,41 @@
 			]
 		},
 		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "USER: Crear un usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"mail@mail.com\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/usuario",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "GET- Verificacion de servicio",
 			"request": {
 				"method": "GET",
