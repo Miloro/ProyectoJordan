@@ -3,7 +3,7 @@ let usuarioRepository = require('../repositories/usuario.repository')
 
 exports.altaUsuario = (req, res) => {
 
-    usuarioRepository.altaUsuario(req.body.email, req.body.role)
+    usuarioRepository.altaUsuario(req.body.email, req.body.rol)
                         .then(usuarioRegistrado => {
                                             res.status(200).json({
                                                 ok : true,
