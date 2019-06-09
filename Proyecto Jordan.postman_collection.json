@@ -92,11 +92,18 @@
 				},
 				{
 					"name": "ESTUCHE: Consultar stock con precio Compra",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban",
+							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban&email=mail@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -138,6 +145,10 @@
 								{
 									"key": "marca",
 									"value": "Ray-Ban"
+								},
+								{
+									"key": "email",
+									"value": "mail@mail.com"
 								}
 							]
 						}
@@ -563,7 +574,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"mail@mail.com\",\n\t\"rol\": \"ADMIN_ROLE\"\n}"
+							"raw": "{\n\t\"email\": \"mail@mail.com\"\n}"
 						},
 						"url": {
 							"raw": "localhost:3000/api/usuario",

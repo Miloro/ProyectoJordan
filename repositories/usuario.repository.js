@@ -10,3 +10,7 @@ exports.altaUsuario= (email, rol) => {
 exports.verUsuarios = () => {
     return Usuario.find();
 }
+
+exports.buscarPorEmail= (email) =>{
+    return Usuario.findOne({email: email});
+}

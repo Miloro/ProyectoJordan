@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let estucheController = require('../controllers/estuche.controller');
+let mdAutorizacion = require('../middlewares/autorizacion');
 
 // Metodos HTTP. Recomiendo que lean de algun lado las buenas practicas.
 // A grandes rasgos: 
@@ -10,7 +11,7 @@ let estucheController = require('../controllers/estuche.controller');
 // PATCH: Se utiliza para modificar solo una parte de una entidad que ya existe (ejemplo: subirle el stock).
 
 app.get('/stock', estucheController.stockDeEstuche);
-app.get('/stockConPrecioCompra', estucheController.stockDeEstucheConPrecioCompra);
+app.get('/stockConPrecioCompra',mdAutorizacion.soloAdmin, estucheController.stockDeEstucheConPrecioCompra);
 app.patch('/stock', estucheController.quitarDelStock);
 app.post('/', estucheController.altaModeloEstuche);
 
