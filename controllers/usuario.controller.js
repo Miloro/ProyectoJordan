@@ -11,7 +11,7 @@ exports.altaUsuario = (req, res) => {
                                                 usuarioRegistrado
                                             });
                         }).catch(error =>{
-                                        res.status(500).json({
+                                        res.status(400).json({
                                             ok: false,
                                             message: 'Ocurrio un error agregando el usuario',
                                             error
