@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4e93eb09-2e97-4520-82d6-cacf24ba04f2",
+		"_postman_id": "5bad2a9f-8b48-4e44-ae72-5d3e4d6bb372",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -294,7 +294,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?marca=copado",
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?marca=copado&email=mail@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -309,6 +309,10 @@
 								{
 									"key": "marca",
 									"value": "copado"
+								},
+								{
+									"key": "email",
+									"value": "mail@mail.com"
 								}
 							]
 						}
@@ -347,45 +351,6 @@
 		{
 			"name": "ANTEOJO",
 			"item": [
-				{
-					"name": "ANTEOJO: Stock de anteojo",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/anteojo/stock?material=Plastico&tipo=comun&marca=Ray-Ban&codigo=A10",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"anteojo",
-								"stock"
-							],
-							"query": [
-								{
-									"key": "material",
-									"value": "Plastico"
-								},
-								{
-									"key": "tipo",
-									"value": "comun"
-								},
-								{
-									"key": "marca",
-									"value": "Ray-Ban"
-								},
-								{
-									"key": "codigo",
-									"value": "A10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "ANTEOJO: Dar de alta un antejo",
 					"request": {
@@ -512,6 +477,45 @@
 								"api",
 								"anteojo",
 								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ANTEOJO: Stock de anteojo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/anteojo/stock?material=Plastico&tipo=comun&marca=Ray-Ban&codigo=A10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "material",
+									"value": "Plastico"
+								},
+								{
+									"key": "tipo",
+									"value": "comun"
+								},
+								{
+									"key": "marca",
+									"value": "Ray-Ban"
+								},
+								{
+									"key": "codigo",
+									"value": "A10"
+								}
 							]
 						}
 					},
