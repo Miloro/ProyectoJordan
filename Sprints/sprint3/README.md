@@ -36,14 +36,20 @@
 * Que nos llevamos para hacer:
     
 * Negativo:
-       *Fallas en la organizacion de tiempos.
+     * Ante la falta de Conocimientos nos quedamos cortos con el VSM. 
 
 * Positivo:
-    * Desafios con aprendizaje de nuevas tecnologias y funcionalidad. 
+    * Se pudo Cumplir con lo estimado
+    
 
 ---
 
 ### Tareas que se tomarán el siguiente sprint:
+
+
+1. El usuario quiere que el codigo de cada anteojo sea unico (3)
+2.El usuario quiere que el codigo de cada Cristal sea unico(3)
+3.El usuario quiere que el codigo de cada Estuche sea unico(2)
 
 
 
