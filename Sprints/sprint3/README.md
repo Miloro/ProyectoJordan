@@ -27,8 +27,7 @@
     * Un modelo de anteojo tiene marca,tipo,material,codigo
     * Indicar la cantidad de stock (o no) que posee el modelo
        
-    ![grafico velocidad](https://github.com/Miloro/ProyectoJordan/blob/dev/Sprints/sprint2/grafico%20de%20velocidad.PNG)
-    
+![grafico de velocidad real](https://github.com/Miloro/ProyectoJordan/blob/dev/Sprints/sprint3/grafico%20velocidad%203.jpeg)    
 
 
 ### Retrospectiva
