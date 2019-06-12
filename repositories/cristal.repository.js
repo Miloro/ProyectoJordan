@@ -29,9 +29,10 @@ exports.stockDeCristal = (marca) =>{
 exports.stockConPrecioCompraDeCristal = (marca) =>{
     return Cristal.findOne({
         marca:marca
-    },{stock:1, precioCompra:1, _id:0}).then(res =>{
-        res.precioCompra = res.precioCompra/100
-        return res
+    },{stock:1, precioCompra:1, precioVenta:1, _id:0}).then(res =>{
+        res.precioCompra = res.precioCompra/100;
+        res.precioVenta = res.precioVenta/100;
+        return res;
     });
 }
 
@@ -39,8 +40,8 @@ exports.stockConPrecioVentaDeCristal = (marca) =>{
     return Cristal.findOne({
         marca:marca       
     },{stock:1 , precioVenta:1, _id:0}).then(res =>{
-        res.precioVenta = res.precioVenta/100
-        return res
+        res.precioVenta = res.precioVenta/100;
+        return res;
     })
 }
 
@@ -49,5 +50,9 @@ exports.disminuirStock = (marca , cantidad) =>{
         {marca : marca , "stock": {$gte: cantidad}},
         {$inc:{stock: (-cantidad)}},
         {new : true}
-    )
+    ).then(res =>{
+        res.precioCompra = res.precioCompra/100;
+        res.precioVenta = res.precioVenta/100;
+        return res;
+    });
 }

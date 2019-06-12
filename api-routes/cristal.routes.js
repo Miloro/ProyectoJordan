@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let cristalController = require('../controllers/cristal.controller');
+let mdAutorizacion = require('../middlewares/autorizacion');
 
 // Metodos HTTP. Recomiendo que lean de algun lado las buenas practicas.
 // A grandes rasgos: 
@@ -10,9 +11,9 @@ let cristalController = require('../controllers/cristal.controller');
 // PATCH: Se utiliza para modificar solo una parte de una entidad que ya existe (ejemplo: subirle el stock).
 
 app.get('/stock', cristalController.stockDeCristal);
-app.get('/stockConPrecioCompra', cristalController.stockConPrecioCompra)
+app.get('/stockConPrecioCompra',mdAutorizacion.soloAdmin , cristalController.stockConPrecioCompra)
 app.get('/stockConPrecioVenta', cristalController.stockConPrecioVenta)
-app.put('/disminuirStock', cristalController.disminuirStock )
+app.patch('/stock', cristalController.disminuirStock )
 app.post('/', cristalController.altaModeloCristal);
 
 

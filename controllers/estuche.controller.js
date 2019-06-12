@@ -19,7 +19,7 @@ exports.altaModeloEstuche = (req, res) => {
                                             error
                                         })
                         });
-}
+};
 
 exports.stockDeEstuche = (req, res) =>{
     estucheRepository.stockDeEstuche(req.query.marca, req.query.material, req.query.color, req.query.codigo)
@@ -39,7 +39,7 @@ exports.stockDeEstuche = (req, res) =>{
 } 
 
 exports.stockDeEstucheConPrecioCompra = (req, res) =>{
-    estucheRepository.stockDeEstuche(req.query.marca, req.query.material, req.query.color, req.query.codigo)
+    estucheRepository.stockDeEstucheConPrecioCompra(req.query.marca, req.query.material, req.query.color, req.query.codigo)
                         .then( stock =>{
                                 res.status(200).json({
                                     ok:true,
@@ -53,7 +53,7 @@ exports.stockDeEstucheConPrecioCompra = (req, res) =>{
                                 message: "No existe un estuche con esas caracteristicas"
                             })
                         });
-} 
+};
 
 exports.quitarDelStock = (req, res) =>{
     estucheRepository.quitarDelStock(req.body.cantidadADescontar, req.body.codigo)

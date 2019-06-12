@@ -16,6 +16,8 @@
     
     
     
+
+
 ### Retrospectiva
 
 * Que nos llevamos para hacer:
@@ -30,6 +32,8 @@
      
 * Positivo:
     * Desafios con aprendizaje de nuevas tecnologias y funcionalidad. 
+
+---
 
 ### Tareas que se tomarán el siguiente sprint:
 
@@ -51,7 +55,7 @@
     * Quiero poder buscar el precio de venta y stock indicando marca, color, material y codigo
     
 6. Como usuario quiero poder ver el precio de venta y stock de un modelo de estuche (2)
-    * Quiero poder buscar el precio de venta y stock indicando marca, color, material y codigo
+    * Quiero poder buscar el precio de compra y stock indicando marca, color, material y codigo
 
 
 7. Como usuario quiero poder ver el precio de venta y stock de un modelo de anteojo (5)
