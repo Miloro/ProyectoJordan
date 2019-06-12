@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "5bad2a9f-8b48-4e44-ae72-5d3e4d6bb372",
-		"name": "Proyecto Jordan",
+		"_postman_id": "4611abea-2d5b-4275-83b7-e08686bdb505",
+		"name": "Proyecto Jordan copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -66,18 +66,6 @@
 									"value": "Negro"
 								},
 								{
-									"key": null,
-									"value": null
-								},
-								{
-									"key": null,
-									"value": null
-								},
-								{
-									"key": null,
-									"value": null
-								},
-								{
 									"key": "codigo",
 									"value": "E001"
 								},
@@ -122,21 +110,6 @@
 								{
 									"key": "color",
 									"value": "Negro"
-								},
-								{
-									"key": null,
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": null,
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": null,
-									"value": null,
-									"disabled": true
 								},
 								{
 									"key": "codigo",
@@ -223,7 +196,7 @@
 					"response": []
 				},
 				{
-					"name": "PUT- disminuir stock de cristal",
+					"name": "PATCH- disminuir stock de cristal",
 					"request": {
 						"method": "PATCH",
 						"header": [
@@ -578,7 +551,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"mail@mail.com\"\n}"
+							"raw": "{\n\t\"email\": \"mail@mail.com\",\n\t\"rol\":\"ADMIN_ROLE\"\n}"
 						},
 						"url": {
 							"raw": "localhost:3000/api/usuario",
