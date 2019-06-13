@@ -48,9 +48,9 @@
 
 
 1. El usuario quiere que el codigo de cada anteojo sea unico (3)
-2.El usuario quiere que el codigo de cada Cristal sea unico(3)
-3.El usuario quiere que el codigo de cada Estuche sea unico(2)
-4.El usuario quiere guardar los cristales con codigo marca, material, tipo ,precio de Compra y precio de venta (3)
+2. El usuario quiere que el codigo de cada Cristal sea unico(3)
+3. El usuario quiere que el codigo de cada Estuche sea unico(2)
+4. El usuario quiere guardar los cristales con codigo marca, material, tipo ,precio de Compra y precio de venta (3)
 5. EL usuario  dueño quiere ver el precio de compra  y venta por codigo y marca (3)
 6. EL usuario  normal quiere ver el precio de venta   por codigo y marca (3)
 7. EL usuario  dueño quiere ser el unico con poder dar de alta a los Anteojos (5)
