@@ -45,7 +45,7 @@ exports.stockDeCristal = (req, res) =>{
 };
 
 exports.stockConPrecioCompra = (req, res)=>{
-    cristalRepository.stockConPrecioCompraDeCristal(req.query.marca)
+    cristalRepository.stockConPrecioCompraDeCristal(req.query.codigo ,req.query.marca)
                         .then( stock =>{
                                 res.status(200).json({
                                     ok:true,
