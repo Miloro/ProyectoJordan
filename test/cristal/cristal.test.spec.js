@@ -17,8 +17,8 @@ describe('dao', ()=>{
 
     it('Debería devolver 99 cuando descuento una unidad del stock cristales de la marca aaaa', async () => {
 
-        await cristalRepository.altaModeloCristal("ABC123" ,"aaaa",100,"CRISTAL", "BI_FOCAL",100, 128.3);
-        await cristalRepository.disminuirStock("aaaa", 1);
+        await cristalRepository.altaModeloCristal("ABC1233" ,"aaaa",100,"CRISTAL", "BI_FOCAL",100, 128.3);
+        await cristalRepository.disminuirStock("ABC1233", "aaaa", 1);
         const result = await cristalRepository.stockDeCristal("aaaa");
         assert.strictEqual(result.stock, 99);
     });
