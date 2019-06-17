@@ -13,7 +13,10 @@ var Tipo = {
 
 // Setup schema
 var cristalSchema = Schema({
-    
+    codigo:{
+        type: String,
+        required: true
+    },
     marca: { 
         type : String, 
         required: true 
