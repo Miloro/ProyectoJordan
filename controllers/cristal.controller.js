@@ -79,7 +79,7 @@ exports.stockConPrecioVenta =(req, res) =>{
 }
 
 exports.disminuirStock =(req, res) =>{
-    cristalRepository.disminuirStock(req.body.marca, req.body.cantidad)
+    cristalRepository.disminuirStock(req.body.codigo, req.body.marca, req.body.cantidad)
                         .then(cristal =>{
                                 res.status(200).json({
                                     ok: true,

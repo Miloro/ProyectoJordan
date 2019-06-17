@@ -48,9 +48,9 @@ exports.stockConPrecioVentaDeCristal = (codigo,marca) =>{
     })
 }
 
-exports.disminuirStock = (marca , cantidad) =>{
+exports.disminuirStock = (codigo, marca , cantidad) =>{
     return Cristal.findOneAndUpdate(
-        {marca : marca , "stock": {$gte: cantidad}},
+        {codigo:codigo, marca : marca , "stock": {$gte: cantidad}},
         {$inc:{stock: (-cantidad)}},
         {new : true}
     ).then(res =>{
