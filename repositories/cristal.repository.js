@@ -38,8 +38,9 @@ exports.stockConPrecioCompraDeCristal = (codigo, marca) =>{
     });
 }
 
-exports.stockConPrecioVentaDeCristal = (marca) =>{
+exports.stockConPrecioVentaDeCristal = (codigo,marca) =>{
     return Cristal.findOne({
+        codigo: codigo,
         marca:marca       
     },{stock:1 , precioVenta:1, _id:0}).then(res =>{
         res.precioVenta = res.precioVenta/100;
