@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 let Schema = mongoose.Schema;
+let uniqueValidator= require('mongoose-unique-validator');
 
 var Material = {
     values: ["CRISTAL", "VIDRIO"],
@@ -15,7 +16,8 @@ var Tipo = {
 var cristalSchema = Schema({
     codigo:{
         type: String,
-        required: true
+        required: true,
+        unique: true 
     },
     marca: { 
         type : String, 
@@ -45,6 +47,8 @@ var cristalSchema = Schema({
     }
     
 });
+
+cristalSchema.plugin(uniqueValidator, { message: 'el {PATH} ya existe'});
 
 // Export MedicalCard model
 module.exports = mongoose.model('Cristal', cristalSchema);
