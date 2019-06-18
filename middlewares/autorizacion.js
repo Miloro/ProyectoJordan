@@ -11,15 +11,3 @@ exports.soloAdmin= async (req, res, next) => {
         mensaje: "Solo pueden acceder los ADMIN a esta funcion"
     })}
 }
-
-exports.soloAdminBody= async (req, res, next) => {
-    const usuario = await usuarioRepository.buscarPorEmail( req.body.email )
-    if(usuario && 'ADMIN_ROLE' == usuario.rol)
-        next();
-    else{
-
-    res.status(401).json({
-        ok: false,
-        mensaje: "Solo pueden acceder los ADMIN a esta funcion"
-    })}
-}
