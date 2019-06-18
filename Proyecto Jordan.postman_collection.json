@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "4611abea-2d5b-4275-83b7-e08686bdb505",
-		"name": "Proyecto Jordan copy",
+		"_postman_id": "5bad2a9f-8b48-4e44-ae72-5d3e4d6bb372",
+		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -66,6 +66,18 @@
 									"value": "Negro"
 								},
 								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
 									"key": "codigo",
 									"value": "E001"
 								},
@@ -91,7 +103,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban&email=mail@mail.com",
+							"raw": "http://localhost:3000/api/estuche/stockConPrecioCompra?material=Plastico&color=Negro&codigo=E001&marca=Ray-Ban&email=admin@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -112,6 +124,21 @@
 									"value": "Negro"
 								},
 								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": null,
+									"value": null,
+									"disabled": true
+								},
+								{
 									"key": "codigo",
 									"value": "E001"
 								},
@@ -121,7 +148,7 @@
 								},
 								{
 									"key": "email",
-									"value": "mail@mail.com"
+									"value": "admin@mail.com"
 								}
 							]
 						}
@@ -178,10 +205,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"copado\", \n\t\"stock\" : \"1\",\n\t\"material\": \"CRISTAL\",\n\t\"tipo\": \"MULTIFOCAL\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\" : \"120.90\"\n}"
+							"raw": "{ \n\t\"codigo\"  : \"123ABC\",\n\t\"marca\"   : \"copado\", \n\t\"stock\"   : \"10\",\n\t\"material\": \"CRISTAL\",\n\t\"tipo\"    : \"MULTIFOCAL\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\" : \"120.90\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/cristal",
+							"raw": "http://localhost:3000/api/cristal?email=admin@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -190,13 +217,19 @@
 							"path": [
 								"api",
 								"cristal"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "PATCH- disminuir stock de cristal",
+					"name": "PUT- disminuir stock de cristal",
 					"request": {
 						"method": "PATCH",
 						"header": [
@@ -209,7 +242,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"marca\" : \"copado\",\n\t\"cantidad\" : \"1\"\n}"
+							"raw": "{\n\t\"codigo\" : \"123ABC\",\n\t\"marca\" : \"copado\",\n\t\"cantidad\" : \"1\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/cristal/stock",
@@ -267,7 +300,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?marca=copado&email=mail@mail.com",
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioCompra?codigo=123ABC&marca=copado&email=mail@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -279,6 +312,10 @@
 								"stockConPrecioCompra"
 							],
 							"query": [
+								{
+									"key": "codigo",
+									"value": "123ABC"
+								},
 								{
 									"key": "marca",
 									"value": "copado"
@@ -551,7 +588,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"mail@mail.com\",\n\t\"rol\":\"ADMIN_ROLE\"\n}"
+							"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"rol\" : \"ADMIN_ROLE\"\r\n}"
 						},
 						"url": {
 							"raw": "localhost:3000/api/usuario",
