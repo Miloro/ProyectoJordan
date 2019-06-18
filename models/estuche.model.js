@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 let Schema = mongoose.Schema;
+let uniqueValidator= require('mongoose-unique-validator');
 
 
 // Setup schema
@@ -19,7 +20,8 @@ var estucheSchema = Schema({
     },
     codigo: { 
         type : String,
-        required: true 
+        required: true,
+        unique: true
     },
     precioVenta: {
         type: Number,
@@ -35,6 +37,8 @@ var estucheSchema = Schema({
     }
     
 });
+
+estucheSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico'});
 
 // Export MedicalCard model
 module.exports = mongoose.model('Estuche', estucheSchema);
