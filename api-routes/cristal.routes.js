@@ -14,7 +14,7 @@ app.get('/stock', cristalController.stockDeCristal);
 app.get('/stockConPrecioCompra',mdAutorizacion.soloAdmin , cristalController.stockConPrecioCompra)
 app.get('/stockConPrecioVenta', cristalController.stockConPrecioVenta)
 app.patch('/stock', cristalController.disminuirStock )
-app.post('/', cristalController.altaModeloCristal);
+app.post('/', mdAutorizacion.soloAdmin ,cristalController.altaModeloCristal);
 
 
 

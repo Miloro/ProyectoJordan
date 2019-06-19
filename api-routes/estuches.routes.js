@@ -13,6 +13,6 @@ let mdAutorizacion = require('../middlewares/autorizacion');
 app.get('/stock', estucheController.stockDeEstuche);
 app.get('/stockConPrecioCompra',mdAutorizacion.soloAdmin, estucheController.stockDeEstucheConPrecioCompra);
 app.patch('/stock', estucheController.quitarDelStock);
-app.post('/', estucheController.altaModeloEstuche);
+app.post('/', mdAutorizacion.soloAdmin, estucheController.altaModeloEstuche);
 
 module.exports = app;

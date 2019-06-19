@@ -5,7 +5,7 @@ let app = express();
 app.get('/', function (req, res, next) {
     res.status(200).json({
         ok: true,
-        message: 'bienvenidos a Jordan',
+        message: 'Bienvenidos a Jordan',
     });
 });
 

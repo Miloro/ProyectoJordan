@@ -6,8 +6,9 @@ const Cristal = require('../models/cristal.model');
 // // Lean sobre eso en documentacion de Node (videos en youtube tambien son validos) para saber como se usan y para que sirven.
 // // LEAN LEAN LEAN LEEEEAAANNN!!!!!
 
-exports.altaModeloCristal =(marca, stock = 0, material, tipo, precioCompra, precioVenta)  => {
+exports.altaModeloCristal =(codigo, marca, stock = 0, material, tipo, precioCompra, precioVenta)  => {
     return new Cristal({
+        codigo: codigo,
         marca: marca,
         stock: stock,
         material: material,
@@ -26,8 +27,9 @@ exports.stockDeCristal = (marca) =>{
     },{stock:1, _id: 0});
 }
 
-exports.stockConPrecioCompraDeCristal = (marca) =>{
+exports.stockConPrecioCompraDeCristal = (codigo, marca) =>{
     return Cristal.findOne({
+        codigo:codigo,
         marca:marca
     },{stock:1, precioCompra:1, precioVenta:1, _id:0}).then(res =>{
         res.precioCompra = res.precioCompra/100;
@@ -36,8 +38,9 @@ exports.stockConPrecioCompraDeCristal = (marca) =>{
     });
 }
 
-exports.stockConPrecioVentaDeCristal = (marca) =>{
+exports.stockConPrecioVentaDeCristal = (codigo,marca) =>{
     return Cristal.findOne({
+        codigo: codigo,
         marca:marca       
     },{stock:1 , precioVenta:1, _id:0}).then(res =>{
         res.precioVenta = res.precioVenta/100;
@@ -45,9 +48,9 @@ exports.stockConPrecioVentaDeCristal = (marca) =>{
     })
 }
 
-exports.disminuirStock = (marca , cantidad) =>{
+exports.disminuirStock = (codigo, marca , cantidad) =>{
     return Cristal.findOneAndUpdate(
-        {marca : marca , "stock": {$gte: cantidad}},
+        {codigo:codigo, marca : marca , "stock": {$gte: cantidad}},
         {$inc:{stock: (-cantidad)}},
         {new : true}
     ).then(res =>{

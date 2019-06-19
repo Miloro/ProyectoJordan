@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 let Schema = mongoose.Schema;
+let uniqueValidator= require('mongoose-unique-validator');
 
 
 var anteojoSchema = Schema({
@@ -19,7 +20,8 @@ var anteojoSchema = Schema({
 
     codigo: {
         type : String,
-        required: true
+        required: true,
+        unique: true 
     },
 
     precioCompra: {
@@ -38,5 +40,8 @@ var anteojoSchema = Schema({
     },
 
 });
+
+anteojoSchema.plugin(uniqueValidator, { message: '{PATH} debe ser unico'});
+
 
 module.exports = mongoose.model('Anteojo', anteojoSchema);

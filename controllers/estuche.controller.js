@@ -13,7 +13,7 @@ exports.altaModeloEstuche = (req, res) => {
                                                 data: estucheRegistrado
                                             });
                         }).catch(error =>{
-                                        res.status(500).json({
+                                        res.status(409).json({
                                             ok: false,
                                             message: 'Ocurrio un error agregando el estuche',
                                             error

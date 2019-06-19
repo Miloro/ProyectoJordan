@@ -4,7 +4,7 @@ let cristalRepository = require('../repositories/cristal.repository')
 exports.altaModeloCristal = (req, res) => {
     let precioCompra = req.body.precioCompra*100 ;
     let precioVenta  = req.body.precioVenta*100 ;
-    cristalRepository.altaModeloCristal(req.body.marca, req.body.stock,req.body.material, req.body.tipo, precioCompra,precioVenta)
+    cristalRepository.altaModeloCristal(req.body.codigo, req.body.marca, req.body.stock,req.body.material, req.body.tipo, precioCompra,precioVenta)
                         .then(cristalRegistrado => {
                                             res.status(200).json({
                                                 ok : true,
@@ -45,7 +45,7 @@ exports.stockDeCristal = (req, res) =>{
 };
 
 exports.stockConPrecioCompra = (req, res)=>{
-    cristalRepository.stockConPrecioCompraDeCristal(req.query.marca)
+    cristalRepository.stockConPrecioCompraDeCristal(req.query.codigo ,req.query.marca)
                         .then( stock =>{
                                 res.status(200).json({
                                     ok:true,
@@ -62,7 +62,7 @@ exports.stockConPrecioCompra = (req, res)=>{
 }
 
 exports.stockConPrecioVenta =(req, res) =>{
-    cristalRepository.stockConPrecioVentaDeCristal(req.query.marca)
+    cristalRepository.stockConPrecioVentaDeCristal(req.query.codigo ,req.query.marca)
                         .then( stock =>{
                                 res.status(200).json({
                                     ok: true,
@@ -79,7 +79,7 @@ exports.stockConPrecioVenta =(req, res) =>{
 }
 
 exports.disminuirStock =(req, res) =>{
-    cristalRepository.disminuirStock(req.body.marca, req.body.cantidad)
+    cristalRepository.disminuirStock(req.body.codigo, req.body.marca, req.body.cantidad)
                         .then(cristal =>{
                                 res.status(200).json({
                                     ok: true,
