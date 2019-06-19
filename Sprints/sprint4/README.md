@@ -46,7 +46,7 @@
 * Que nos llevamos para hacer:
     
 * Negativo:
-     * Ante la falta de Conocimientos nos quedamos cortos con el VSM. 
+     * Nos costo poder llegar ante complicaciones por falta de enerfia electrica que transcurrio el día Domingo. Algunos de los miembros no tuvieron luz por varios días. 
 
 * Positivo:
     * Se pudo Cumplir con lo estimado
