@@ -59,3 +59,15 @@ exports.disminuirStock = (codigo, marca , cantidad) =>{
         return res;
     });
 }
+
+exports.aumentarStock = (codigo,marca,cantidad) =>{
+    return Cristal.findOneAndUpdate(
+        {codigo:codigo, marca : marca , "stock": {$gte: cantidad}},
+        {$inc:{stock: (cantidad)}},
+        {new : true}
+    ).then(res =>{
+        res.precioCompra = res.precioCompra/100;
+        res.precioVenta = res.precioVenta/100;
+        return res;
+    });    
+}
