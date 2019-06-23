@@ -95,6 +95,23 @@ exports.disminuirStock =(req, res) =>{
                         })
                     }
 
+exports.aumentarStock =(req, res) =>{
+    cristalRepository.aumentarStock(req.body.codigo, req.body.marca, req.body.cantidad)
+                        .then(cristal =>{
+                            res.status(200).json({
+                                ok: true,
+                                cristal
+                            })
+                        }
+                    )
+                    .catch( err => {
+                        res.status(400).json({
+                            ok: false,
+                            message:"No se pudo realizar la operacion"
+                        })
+                    })
+}
+
 
 
 

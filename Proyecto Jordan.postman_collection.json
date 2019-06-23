@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5bad2a9f-8b48-4e44-ae72-5d3e4d6bb372",
+		"_postman_id": "0441643e-840d-4b55-8306-ee41ff3b7d80",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -261,6 +261,17 @@
 					"response": []
 				},
 				{
+					"name": "PUT- aumentar stock de cristal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET- consultar stock",
 					"request": {
 						"method": "GET",
@@ -335,7 +346,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?marca=copado",
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?codigo=123ABCDE&marca=copado",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -347,6 +358,10 @@
 								"stockConPrecioVenta"
 							],
 							"query": [
+								{
+									"key": "codigo",
+									"value": "123ABCDE"
+								},
 								{
 									"key": "marca",
 									"value": "copado"
