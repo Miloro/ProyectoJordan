@@ -97,10 +97,10 @@ exports.disminuirStock =(req, res) =>{
 
 exports.aumentarStock =(req, res) =>{
     anteojoRepository.aumentarStock(req.body.marca,req.body.codigo, req.body.cantidad)
-        .then(cristal =>{
+        .then(anteojo =>{
                 res.status(200).json({
                     ok: true,
-                    cristal
+                    anteojo
                 })
             }
         )

@@ -38,7 +38,7 @@ exports.stockDeAnteojoConPrecioCompra = (marca,tipo, material, codigo) => {
             return res})
 }
 
-exports.stockDeAnteojoConPrecioVenta = (marca,tipo,material, codigo,) => {
+exports.stockDeAnteojoConPrecioVenta = (marca,tipo,material, codigo) => {
      return Anteojo.findOne({
             marca: marca,
             tipo: tipo,
