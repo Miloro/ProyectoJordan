@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5bad2a9f-8b48-4e44-ae72-5d3e4d6bb372",
+		"_postman_id": "17713dac-4058-4a91-8b0e-475b54985ef5",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -261,6 +261,17 @@
 					"response": []
 				},
 				{
+					"name": "PUT- aumentar stock de cristal",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET- consultar stock",
 					"request": {
 						"method": "GET",
@@ -335,7 +346,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?marca=copado",
+							"raw": "http://localhost:3000/api/cristal/stockConPrecioVenta?codigo=123ABCDE&marca=copado",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -347,6 +358,10 @@
 								"stockConPrecioVenta"
 							],
 							"query": [
+								{
+									"key": "codigo",
+									"value": "123ABCDE"
+								},
 								{
 									"key": "marca",
 									"value": "copado"
@@ -375,10 +390,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"Ray-Ban\",\n\t\"tipo\"  : \"comun\",\n\t\"material\" : \"Plastico\", \n\t\"codigo\" : \"A10\",\n\t\"precioCompra\" : 10,\n\t\"precioVenta\" : 20,\n\t\"stock\" : \"2\"\n}\n"
+							"raw": "{ \n\t\"marca\" : \"Ray-Ban\",\n\t\"tipo\"  : \"comun\",\n\t\"material\" : \"Plastico\", \n\t\"codigo\" : \"A12\",\n\t\"precioCompra\" : 10,\n\t\"precioVenta\" : 20,\n\t\"stock\" : \"2\"\n}\n"
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/anteojo/",
+							"raw": "http://localhost:3000/api/anteojo?email=admin@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -386,8 +401,13 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"anteojo",
-								""
+								"anteojo"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
 							]
 						}
 					},
@@ -474,7 +494,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A10\",\n\t\"cantidad\": 1\n}"
+							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A12\",\n\t\"cantidad\": 1\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/anteojo/stock",
@@ -537,7 +557,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/anteojo/stockConPrecioCompra?marca=Ray-Ban&tipo=comun&material=Plastico&codigo=A10",
+							"raw": "localhost:3000/api/anteojo/stockConPrecioCompra?marca=Ray-Ban&tipo=comun&material=Plastico&codigo=A10&email=admin@mail.com",
 							"host": [
 								"localhost"
 							],
@@ -563,7 +583,42 @@
 								{
 									"key": "codigo",
 									"value": "A10"
+								},
+								{
+									"key": "email",
+									"value": "admin@mail.com"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aumentar stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A10\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/anteojo/stockAumentar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								"stockAumentar"
 							]
 						}
 					},
@@ -599,6 +654,175 @@
 							"path": [
 								"api",
 								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LENTE-DE-CONTACTO",
+			"item": [
+				{
+					"name": "alta modelo Lente de contacto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\":\"L10\",\n    \"marca\": \"x\",\n    \"graduacion\": 10,\n    \"color\": \"azul\",\n    \"precioCompra\":100,\n    \"precioVenta\": 1000,\n    \"stock\": 10\n    \n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto?email=admin@mail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stock de Lente de Contacto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stock?codigo=L10&marca=x",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "L10"
+								},
+								{
+									"key": "marca",
+									"value": "x"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stock con Precio de Compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stockConPrecioCompra?codigo=L10&marca=x&email=admin@mail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "L10"
+								},
+								{
+									"key": "marca",
+									"value": "x"
+								},
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disminuir Stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"L10\",\n\t\"marca\":\"x\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aumentar Stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"L10\",\n\t\"marca\":\"x\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stockAumentar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stockAumentar"
 							]
 						}
 					},
