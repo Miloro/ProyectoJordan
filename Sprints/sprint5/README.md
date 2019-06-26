@@ -14,7 +14,7 @@
        * Quiero poder buscar el precio de venta y stock indicando marca y codigo
 
 
-![grafico de velocidad](https://github.com/Miloro/ProyectoJordan/blob/dev/Sprints/sprint5/grafico_de_velocidad_sprint_5.png)
+![grafico de velocidad](https://github.com/Miloro/ProyectoJordan/blob/ft/cierreSprint/Sprints/sprint5/grafico_de_velocidad_sprint_5.jpeg)
 
 ### Retrospectiva
     
