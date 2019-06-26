@@ -94,3 +94,19 @@ exports.disminuirStock =(req, res) =>{
                         });
 
 }
+
+exports.aumentarStock =(req, res) =>{
+    anteojoRepository.aumentarStock(req.body.marca,req.body.codigo, req.body.cantidad)
+        .then(anteojo =>{
+                res.status(200).json({
+                    ok: true,
+                    anteojo
+                })
+            }
+        )
+        .catch( err => {
+            res.status(400).json({
+                ok: false,
+                message:"No se pudo realizar la operacion"
+            })
+        });}

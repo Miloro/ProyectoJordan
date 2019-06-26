@@ -6,6 +6,7 @@ let mdAutorizacion = require('../middlewares/autorizacion');
 
 app.get('/stock', anteojoController.stockDeAnteojo);
 app.get('/stockConPrecioCompra' , mdAutorizacion.soloAdmin, anteojoController.stockDeAnteojoConPrecioCompra);
+app.patch('/stock', anteojoController.aumentarStock );
 app.patch('/stock', anteojoController.disminuirStock);
 app.post('/', mdAutorizacion.soloAdmin, anteojoController.altaModeloAnteojo);
 
