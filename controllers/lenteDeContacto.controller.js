@@ -5,7 +5,7 @@ exports.altaModelo = (req, res) => {
     let precioVenta= req.body.precioVenta*100 ;
     let precioCompra= req.body.precioCompra*100 ;
 
-    lenteDeContactoRepository.altaModeloAnteojo(req.body.codigo,req.body.marca, req.body.graduacion,req.body.color,precioCompra, precioVenta, req.body.stock)
+    lenteDeContactoRepository.altaModelo(req.body.codigo,req.body.marca, req.body.graduacion,req.body.color,precioCompra, precioVenta, req.body.stock)
         .then(lenteDeContactoRegistrado => {
             res.status(200).json({
                 ok : true,
@@ -22,7 +22,7 @@ exports.altaModelo = (req, res) => {
 }
 
 exports.stockDeLente = (req, res) =>{
-    lenteDeContactoRepository.stockDeAnteojo(req.query.codigo,req.query.marca)
+    lenteDeContactoRepository.stockDeLente(req.query.codigo,req.query.marca)
         .then( stock =>{
             if(!stock){
                 res.status(200).json({

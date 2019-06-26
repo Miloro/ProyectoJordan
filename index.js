@@ -40,7 +40,7 @@ let estucheRoutes = require('./api-routes/estuches.routes');
 let cristalRoutes = require('./api-routes/cristal.routes');
 let anteojoRoutes = require('./api-routes/anteojo.routes');
 let usuarioRoutes = require('./api-routes/usuario.routes');
-
+let lenteDeContactoRoutes = require('./api-routes/lenteDeContacto.routes');
 
 
 // IMPORTANTE!!! WARNING!!!! Cuidado al ingresar rutas aca, esto es lazy. 
@@ -51,6 +51,7 @@ app.use('/api/estuche', estucheRoutes);
 app.use('/api/cristal', cristalRoutes);
 app.use('/api/anteojo',anteojoRoutes);
 app.use('/api/usuario', usuarioRoutes);
+app.use('/api/lenteDeContacto', lenteDeContactoRoutes);
 app.use('/api', appRoutes);
 
 

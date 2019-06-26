@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0441643e-840d-4b55-8306-ee41ff3b7d80",
+		"_postman_id": "17713dac-4058-4a91-8b0e-475b54985ef5",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -390,10 +390,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"marca\" : \"Ray-Ban\",\n\t\"tipo\"  : \"comun\",\n\t\"material\" : \"Plastico\", \n\t\"codigo\" : \"A10\",\n\t\"precioCompra\" : 10,\n\t\"precioVenta\" : 20,\n\t\"stock\" : \"2\"\n}\n"
+							"raw": "{ \n\t\"marca\" : \"Ray-Ban\",\n\t\"tipo\"  : \"comun\",\n\t\"material\" : \"Plastico\", \n\t\"codigo\" : \"A12\",\n\t\"precioCompra\" : 10,\n\t\"precioVenta\" : 20,\n\t\"stock\" : \"2\"\n}\n"
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/anteojo/",
+							"raw": "http://localhost:3000/api/anteojo?email=admin@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -401,8 +401,13 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"anteojo",
-								""
+								"anteojo"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
 							]
 						}
 					},
@@ -489,7 +494,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A10\",\n\t\"cantidad\": 1\n}"
+							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A12\",\n\t\"cantidad\": 1\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/anteojo/stock",
@@ -583,6 +588,37 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Aumentar stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"marca\":\"Ray-Ban\",\n\t\"codigo\": \"A10\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/anteojo/stockAumentar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"anteojo",
+								"stockAumentar"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -614,6 +650,78 @@
 							"path": [
 								"api",
 								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LENTE-DE-CONTACTO",
+			"item": [
+				{
+					"name": "alta modelo Lente de contacto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\":\"L10\",\n    \"marca\": \"x\",\n    \"graduacion\": 10,\n    \"color\": \"azul\",\n    \"precioCompra\":100,\n    \"precioVenta\": 1000,\n    \"stock\": 10\n    \n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto?email=admin@mail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stock de Lente de Contacto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stock?codigo=L10&marca=x",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "L10"
+								},
+								{
+									"key": "marca",
+									"value": "x"
+								}
 							]
 						}
 					},
