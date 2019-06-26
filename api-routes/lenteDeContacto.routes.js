@@ -6,7 +6,7 @@ let mdAutorizacion = require('../middlewares/autorizacion');
 
 app.get('/stock', lenteDeContactoController.stockDeLente);
 app.get('/stockConPrecioCompra' , mdAutorizacion.soloAdmin, lenteDeContactoController.stockDeLenteConPrecioCompra);
-app.patch('/stock', lenteDeContactoController.aumentarStock );
+app.patch('/stockAumentar', lenteDeContactoController.aumentarStock );
 app.patch('/stock', lenteDeContactoController.disminuirStock);
 app.post('/', mdAutorizacion.soloAdmin, lenteDeContactoController.altaModelo);
 
