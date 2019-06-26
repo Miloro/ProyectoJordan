@@ -8,6 +8,15 @@ describe('dao', ()=>{
         mongoose.connect('mongodb://localhost/puan_test1', done);
     });
 
+    // You can put one ‘after()’ statement above all else that will run when all tests are finished
+  after(function (done){
+    mongoose.connection.db.dropDatabase(function(){
+      mongoose.connection.close(function(){
+        done();
+      });
+    });
+  });
+
     it('Debería devolver 2 cuando pido stock de Lente de Contacto de la marca x con codigo A10', async () => {
 
         await lenteDeContactoRepository.altaModelo("A10","x",10,"azul",10.00,20,2);
