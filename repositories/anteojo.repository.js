@@ -53,14 +53,24 @@ exports.stockDeAnteojoConPrecioVenta = (marca,tipo,material, codigo,) => {
         })
 }
 
-exports.disminuirStock = (marca ,codigo, cantidad) =>{
+exports.disminuirStock = (marca ,codigo, cantidad) => {
     return Anteojo.findOneAndUpdate(
-        {marca : marca ,codigo: codigo, "stock": {$gte: cantidad}},
-        {$inc:{stock: (-cantidad)}},
-        {new : true}
-    ).then(res =>{
-        res.precioCompra = res.precioCompra/100;
-        res.precioVenta = res.precioVenta/100;
+        {marca: marca, codigo: codigo, "stock": {$gte: cantidad}},
+        {$inc: {stock: (-cantidad)}},
+        {new: true}
+    ).then(res => {
+        res.precioCompra = res.precioCompra / 100;
+        res.precioVenta = res.precioVenta / 100;
         return res;
     });
 }
+exports.aumentarStock = (marca, codigo,cantidad) =>{
+        return Anteojo.findOneAndUpdate(
+            {marca : marca,codigo:codigo, "stock": {$gte: cantidad}},
+            {$inc:{stock: (cantidad)}},
+            {new : true}
+        ).then(res =>{
+            res.precioCompra = res.precioCompra/100;
+            res.precioVenta = res.precioVenta/100;
+            return res;
+        });}
