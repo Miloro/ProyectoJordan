@@ -557,7 +557,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/api/anteojo/stockConPrecioCompra?marca=Ray-Ban&tipo=comun&material=Plastico&codigo=A10",
+							"raw": "localhost:3000/api/anteojo/stockConPrecioCompra?marca=Ray-Ban&tipo=comun&material=Plastico&codigo=A10&email=admin@mail.com",
 							"host": [
 								"localhost"
 							],
@@ -583,6 +583,10 @@
 								{
 									"key": "codigo",
 									"value": "A10"
+								},
+								{
+									"key": "email",
+									"value": "admin@mail.com"
 								}
 							]
 						}
@@ -722,6 +726,103 @@
 									"key": "marca",
 									"value": "x"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stock con Precio de Compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stockConPrecioCompra?codigo=L10&marca=x&email=admin@mail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stockConPrecioCompra"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "L10"
+								},
+								{
+									"key": "marca",
+									"value": "x"
+								},
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disminuir Stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"L10\",\n\t\"marca\":\"x\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aumentar Stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"codigo\": \"L10\",\n\t\"marca\":\"x\",\n\t\"cantidad\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/lenteDeContacto/stockAumentar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"lenteDeContacto",
+								"stockAumentar"
 							]
 						}
 					},
