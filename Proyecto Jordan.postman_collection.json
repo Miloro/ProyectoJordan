@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "17713dac-4058-4a91-8b0e-475b54985ef5",
+		"_postman_id": "3e23cfa6-9865-4ba4-a62c-33921fb6d07e",
 		"name": "Proyecto Jordan",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -25,7 +25,7 @@
 							"raw": "{ \n\t\"marca\" : \"Ray-Ban\", \n\t\"material\" : \"Plastico\", \n\t\"color\" : \"Negro\", \n\t\"codigo\" : \"E001\",\n\t\"precioCompra\": \"100\",\n\t\"precioVenta\": \"200.30\",\n\t\"stock\" : \"21\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/estuche",
+							"raw": "http://localhost:3000/api/estuche?email=admin@mail.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -34,6 +34,12 @@
 							"path": [
 								"api",
 								"estuche"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "admin@mail.com"
+								}
 							]
 						}
 					},
@@ -169,7 +175,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"codigo\": \"E001\",\n\t\"cantidadADescontar\": 1\n}"
+							"raw": "{\n\t\"codigo\": \"E001\",\n\t\"cantidad\": -1\n}"
 						},
 						"url": {
 							"raw": "localhost:3000/api/estuche/stock",

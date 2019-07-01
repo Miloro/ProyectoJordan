@@ -43,9 +43,9 @@ exports.stockDeEstucheConPrecioCompra = (marca, material, color, codigo) => {
                                     return res}); 
 }
 
-exports.quitarDelStock = (cantidad, codigo) => {
+exports.modificarStock = (cantidad, codigo) => {
     return Estuche.findOneAndUpdate({codigo: codigo, "stock": {$gte: cantidad}},
-                                    {$inc:{stock: (cantidad*-1)}},
+                                    {$inc:{stock: cantidad}},
                                     {new: true})
                                     .then(res => {
                                         if(!res) return res;
