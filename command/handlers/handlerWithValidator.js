@@ -10,11 +10,10 @@ class HandlerWithValidator extends Handler {
         this.validator = Validator;     
     }      
     
-    validate(data){
-        console.log(data);         
+    validate(data){         
         if(!this.validator.isValid(this.minimumProperties, data)){             
             throw new InvalidDataException(this.command, data)         
-        }     
+        }      
     } 
 }  
 

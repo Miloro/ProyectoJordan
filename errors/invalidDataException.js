@@ -2,7 +2,7 @@ class InvalidDataException extends Error {
     constructor(command, data, message='') {         
         super(message);         
         this.command = command;         
-        this.data = data;     
+        this.data = data;    
     }      
     
     messageDetail(){         
@@ -16,7 +16,11 @@ class InvalidDataException extends Error {
             detail = `Los datos son incorrectos: ${toShow}`;         
         }         
         return `No se pudo completar la operación: ${this.command}. ${detail}`;     
-    }      
+    }  
+    
+    addBuildedEntry(toShow, entry) {
+        return toShow.push(entry[0] + ':' + entry[1]);
+    }
 }
 
 module.exports= InvalidDataException;
