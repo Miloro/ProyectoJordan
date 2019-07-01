@@ -1,0 +1,1 @@
+exports.MONGURI= 'mongodb://localhost:27017/proyecto-jordan';
