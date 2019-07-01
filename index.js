@@ -11,7 +11,7 @@ var PORT = 3000;
 // Fijense de tener MongoDB escuchando por 27017 (es el puerto por defecto de Mongo)
 // Les va a crear una base local que se llama proyecto-jordan.
 // Luego de que carguen el primer registro en la base datos deberian refrescar el ROBO3T y ahi deberian ver la base.
-var MONGURI = "mongodb://localhost:27017/proyecto-jordan";
+const MONGURI = require('./config/config').MONGURI;
 
 
 app.use(bodyParser.urlencoded({
