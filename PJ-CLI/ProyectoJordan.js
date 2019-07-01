@@ -20,20 +20,20 @@ class ProyectoJordan {
         let commandHandler = this.commandSelector.findHandler(command);
 
         if(Boolean(commandHandler)){
-            try{
-                mongoose.connection.openUri(MONGURI,
-                    (err,res) => {
-                            if ( err ) throw err;
+            mongoose.connection.openUri(MONGURI,
+                (err,res) => {
+                    if ( err ) throw err;
+                        try{
                             console.log('BBDD: \x1b[32m%s\x1b[0m', 'online');
                             commandHandler.handle(objectByParameters,mongoose).then(
                                 //Una vez que termina, cierra la conexion.
                             //    mongoose.connection.close()
                             )}
-            );
+            
            //     commandHandler.handle(objectByParameters).then(
                     //Una vez que termina, cierra la conexion.
            //         mongoose.connection.close())
-            } catch (error) {
+             catch (error) {
                 mongoose.connection.close();
                 if (error instanceof InvalidDataException) {
                     console.log(error.messageDetail());
@@ -41,10 +41,10 @@ class ProyectoJordan {
                 if (error instanceof NotFoundException) {
                     console.log(error.messageDetail());
                 } else {
-                    console.log(error);
+                //    console.log(error);
                 }
             }
-        }else {
+        })}else {
             console.log(`No se encontró un handler para el comando: ${command}`);
 
         }
