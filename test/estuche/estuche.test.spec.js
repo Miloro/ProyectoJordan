@@ -17,13 +17,13 @@ describe('dao', ()=>{
 
     it('should return 9 when I try to take 1 case out of stock', async() =>{
       await estucheRepository.altaModeloEstuche("Ray-Ban", "Plastico", "Negro", "E002",230.00, 100, 10);
-      const resultado= await estucheRepository.quitarDelStock(1,"E002");
+      const resultado= await estucheRepository.modificarStock(-1,"E002");
       assert.strictEqual(resultado.stock,9);
     })
 
     it('should return error when I try to take 1 case out of stock and no stock', async() =>{
       await estucheRepository.altaModeloEstuche("Ray-Ban", "Plastico", "Negro", "E003",230.00, 100);
-      const resultado= await estucheRepository.quitarDelStock(1,"E003");
+      const resultado= await estucheRepository.modificarStock(-1,"E003");
       assert.strictEqual(resultado, null);
     })
 

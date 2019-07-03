@@ -55,8 +55,8 @@ exports.stockDeEstucheConPrecioCompra = (req, res) =>{
                         });
 };
 
-exports.quitarDelStock = (req, res) =>{
-    estucheRepository.quitarDelStock(req.body.cantidadADescontar, req.body.codigo)
+exports.modificarStock = (req, res) =>{
+    estucheRepository.modificarStock(req.body.cantidad, req.body.codigo)
                     .then(estucheActualizado => {
                         if(!estucheActualizado){
                             res.status(500).json({

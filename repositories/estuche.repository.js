@@ -43,13 +43,24 @@ exports.stockDeEstucheConPrecioCompra = (marca, material, color, codigo) => {
                                     return res}); 
 }
 
-exports.quitarDelStock = (cantidad, codigo) => {
-    return Estuche.findOneAndUpdate({codigo: codigo, "stock": {$gte: cantidad}},
-                                    {$inc:{stock: (cantidad*-1)}},
+exports.modificarStock = (cantidad, codigo) => {
+    if(cantidad>=0){
+        return Estuche.findOneAndUpdate({codigo: codigo},
+                                    {$inc:{stock: cantidad}},
+                                    {new: true})
+                                    .then(res => {
+                                        if(!res) return res;
+                                        res.precioVenta = res.precioVenta/100;
+                                        res.precioCompra = res.precioCompra/100; 
+                                            return res});
+    }else{
+    return Estuche.findOneAndUpdate({codigo: codigo, "stock": {$gte: -cantidad}},
+                                    {$inc:{stock: cantidad}},
                                     {new: true})
                                     .then(res => {
                                         if(!res) return res;
                                         res.precioVenta = res.precioVenta/100;
                                         res.precioCompra = res.precioCompra/100; 
                                             return res}); 
+    }
 }
