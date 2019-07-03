@@ -6,7 +6,7 @@
 
 
 ### Grafico de Velocidad 
-
+![grafico de Velocidad](https://github.com/Miloro/ProyectoJordan/blob/ftsprint6Readme/Sprints/sprint6/grafico%20de%20velocidad%20sprint%206.png)
 
 ### Retrospectiva
     
